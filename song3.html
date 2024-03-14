@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media player</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/733b144a66.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #customAudioControls {
+        margin-top: 20px;
+      }
+      #volumeControl {
+        width: 230px;
+      }
+      #myAudio {
+        display: inline-flex;
+        border-radius: 20%;
+        color: black;
+        display: grid;
+        background-clip: border-box;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="music-player">
+        <nav>
+          <a href="./song2.html">
+            <div class="circle"><i class="fa-solid fa-angle-left"></i></div
+          ></a>
+          <div class="circle"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+        <a href="./lyrics2.html"
+          ><img src="./media/hii.jpg" class="song-img"
+        /></a>
+
+        <h1>Hi NANNA</h1>
+        <p>Nani, Shruti Haasan, Mrunal Thakur, Angad Bedi, Kiara Khanna</p>
+
+        <audio
+          controls
+          id="myAudio"
+          source
+          src="./media/adigaa.mp3"
+          type="audio/mpeg"
+        ></audio>
+        <div class="controls">
+          <a href="./song2.html">
+          <div><i class="fa-solid fa-backward"></i></div></a>
+          <div button onclick="playpause()">
+            <i class="fa-solid fa-play" fa="pause" id="ctrlicon"></i></button>
+          </div>
+          <div>
+            <a href="./song4.html"><i class="fa-solid fa-forward"></i></a>
+          </div>
+          <div>
+            <a href="./media/adigaa.mp3" download="adigaa.mp3"
+              ><i class="fa-solid fa-download"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="song3.js" defer></script>
+  </body>
+</html>

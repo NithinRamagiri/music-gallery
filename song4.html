@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media player</title>
+    <link rel="icon" type="images/png" href="./media/favs.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/733b144a66.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="music-player">
+        <nav>
+          <a href="./login1.html">
+            <div class="circle"><i class="fa-solid fa-angle-left"></i></div
+          ></a>
+          <a href-=""><div class="circle"><i class="fa-solid fa-bars"></i></a></div>
+        </nav>
+        <a href=""
+          ><img src="./media/nithin.jpg" class="song-img"
+        /></a>
+
+        <h1>oru peru nairavakona</h1>
+        <p>Everyone Fav Song 😍</p>
+
+        <audio
+          controls
+          autoplay
+          muted
+          loop
+          id="song"
+          source
+          src="./media/[iSongs.info] 01 - Nijame Ne Chebutunna.mp3"
+          type="audio/mpeg"
+        ></audio>
+        <input type="range" value="0" id="progress" />
+
+        <div class="controls">
+          <a href="./song3.html">
+          <div><i class="fa-solid fa-backward"></i></div></a>
+          <div onlick="playpause()">
+            <i class="fa-solid fa-play" id="ctrlicon"></i>
+          </div>
+          <div>
+            <a href=""><i class="fa-solid fa-forward"></i></a>
+          </div>
+          <div>
+            <a
+              href="./media/[iSongs.info] 01 - Nijame Ne Chebutunna.mp3"
+              download="[iSongs.info] 01 - Nijame Ne Chebutunna">
+              ><i class="fa-solid fa-download"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let progress = document.getelementbyid("progress");
+      let song = document.getelementbyid("song");
+      let ctrlicon = document.getelementbyid("ctrlicon");
+
+      song.onloadedmetadata = function () {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+      }
+      function playpause() {
+        if (ctrlicon.classlist.contains("fa-pause")) {
+          song.pause();
+          ctrlicon.classlist.remove("fa-pause");
+          ctrlicon.classlist.add("fa-play");
+        }
+        else{
+          song.play(){
+            ctrlicon.classlist.add("fa-pause");
+            ctrlicon.classlist.remove("fa-play");
+          }
+        }
+
+      if(song.play()){
+        setInterval(()=>{
+        progress.value = song.currentTime;
+        },500);
+      }
+      progress.onchange =function (){
+        song.play();
+        song.currentTIme = progress.value;
+        ctrlicon.classlist.add("fa-pause");
+        ctrlicon.classlist.remove("fa-play");
+
+      }
+    </script>
+  </body>
+</html>
